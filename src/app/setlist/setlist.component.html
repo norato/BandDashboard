@@ -1,7 +1,18 @@
 <div class="container">
   <div class="row ustify-content-lg-center">
-    <div class="col-lg-5">
+    <div class="col-sm-12">
+      <button class="btn btn-primary" (click)="ShowMusicForm()">
+        {{ 'Setlist.AddMusic' | translate }}
+      </button>
+      <button class="btn btn-primary" (click)="ShowMusics()">
+        {{ 'Setlist.Musics' | translate }}
+      </button>
+    </div>
+    <div *ngIf="showMusicForm" class="col-lg-5">
       <app-music-form></app-music-form>
+    </div>
+    <div *ngIf="showMusics" class="col-lg-5">
+      <app-music-list [musics]="musics"></app-music-list>
     </div>
   </div>
 </div>

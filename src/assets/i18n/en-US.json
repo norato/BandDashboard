@@ -9,6 +9,11 @@
       "Tone": "Tone",
       "Label": "Label",
       "Lyrics": "Lyrics"
-    }
+    },
+    "HasNoMusic": "Has no music yet! <br/> Add your first music ;-)"
+  },
+  "Setlist": {
+    "AddMusic": "Add Music",
+    "Musics":   "Musics"
   }
 }

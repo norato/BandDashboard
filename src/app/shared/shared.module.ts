@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MusicFormComponent } from './components/music-form/music-form.component';
+import { MusicListComponent } from './components/music-list/music-list.component';
 
 @NgModule({
   imports: [
@@ -13,10 +14,12 @@ import { MusicFormComponent } from './components/music-form/music-form.component
     TranslateModule
   ],
   declarations: [
-    MusicFormComponent
+    MusicFormComponent,
+    MusicListComponent
   ],
   exports: [
-    MusicFormComponent
+    MusicFormComponent,
+    MusicListComponent
   ]
 })
 export class SharedModule { }
