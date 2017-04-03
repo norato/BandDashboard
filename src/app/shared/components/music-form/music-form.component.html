@@ -1,3 +1,40 @@
-<p>
-  music-form works!
-</p>
+<div class="music-form">
+  <form [formGroup]="musicForm">
+    <div class="form-group">
+      <input
+          type="text"
+          class="form-control"
+          placeholder="Artist"
+          formControlName="artist">
+    </div>
+    <div class="form-group">
+      <input
+          type="text"
+          class="form-control"
+          placeholder="Name"
+          formControlName="name">
+    </div>
+    <div class="form-group">
+      <input
+          type="text"
+          class="form-control"
+          placeholder="Tone"
+          formControlName="tone">
+    </div>
+    <div class="form-group">
+      <input
+          type="text"
+          class="form-control"
+          placeholder="Label"
+          formControlName="label">
+    </div>
+    <div class="form-group">
+      <input
+          type="text"
+          class="form-control"
+          placeholder="Lyrics"
+          formControlName="lyrics">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
