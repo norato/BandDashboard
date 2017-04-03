@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor(translate: TranslateService) {
+    translate.addLangs(['en-US']);
+    translate.setDefaultLang('en-US');
+
+    const browserlang = translate.getBrowserLang();
+    translate.use(browserlang.match(/en-US/) ? browserlang : 'en-US');
+
+  }
 }

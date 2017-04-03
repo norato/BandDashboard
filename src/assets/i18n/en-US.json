@@ -1,0 +1,14 @@
+{
+  "Default": {
+    "Save": "Save"
+  },
+  "Shared": {
+    "Placeholder": {
+      "Artist": "Artist",
+      "Name": "Name",
+      "Tone": "Tone",
+      "Label": "Label",
+      "Lyrics": "Lyrics"
+    }
+  }
+}
