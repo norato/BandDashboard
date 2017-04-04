@@ -1,7 +1,11 @@
 <div class="music-list">
   <div *ngIf="musics; else hasNoMusic" >
     <div class="scroll-div">
-      <app-music-card [music]="music" *ngFor="let music of musics"></app-music-card>
+      <app-music-card
+        *ngFor="let music of musics"
+        [music]="music"
+        (musicEdit)="musicEdit.emit($event)"
+      ></app-music-card>
     </div>
   </div>
   <ng-template #hasNoMusic>

@@ -1,6 +1,11 @@
-import { Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  EventEmitter,
+  Output,
+  Input } from '@angular/core';
+
 import { Music } from './../music-form/music';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-music-card',
@@ -9,10 +14,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MusicCardComponent implements OnInit {
   @Input() music: Music;
+  @Output() musicDelete: EventEmitter<any> = new EventEmitter<any>();
+  @Output() musicEdit: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  editEmitter(music) {
+    this.musicEdit.emit(music);
+  }
+
+  deleteEmitter(id) {
+    const confirmation = confirm(`Do you really want to delete story #${id}?`);
+    if (confirmation === true) {
+      this.musicDelete.emit(id);
+    };
   }
 
 }

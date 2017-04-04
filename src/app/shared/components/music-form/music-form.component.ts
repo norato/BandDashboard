@@ -1,6 +1,6 @@
 import { Music } from './music';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-music-form',
@@ -10,10 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class MusicFormComponent implements OnInit {
 
   musicForm: FormGroup;
-  music: Music;
+  @Input() music: Music;
 
   constructor() {
-    this.music = new Music();
   }
 
   ngOnInit() {

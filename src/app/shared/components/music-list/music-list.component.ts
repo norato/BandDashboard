@@ -1,6 +1,11 @@
+import {
+  Component,
+  OnInit,
+  EventEmitter,
+  Output,
+  Input } from '@angular/core';
+
 import { Music } from './../music-form/music';
-import { Input } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-music-list',
@@ -10,11 +15,12 @@ import { Component, OnInit } from '@angular/core';
 export class MusicListComponent implements OnInit {
   hasNoMusic: boolean;
   @Input() musics: Music[];
+  @Output() musicDelete: EventEmitter<any> = new EventEmitter<any>();
+  @Output() musicEdit: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   }
 
   ngOnInit() {
   }
-
 }

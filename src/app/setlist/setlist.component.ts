@@ -27,10 +27,12 @@ export class SetlistComponent implements OnInit {
       lyrics: 'Loren Ipson'
     }
   ];
+  music: Music;
 
   constructor() {
     this.showMusics = true;
     this.showMusicForm = false;
+    this.music = new Music();
   }
 
   ngOnInit() {
@@ -44,6 +46,11 @@ export class SetlistComponent implements OnInit {
   ShowMusics() {
     this.showMusics = true;
     this.showMusicForm = false;
+  }
+
+  editMusic(music) {
+    this.music = music;
+    this.ShowMusicForm();
   }
 
 }
