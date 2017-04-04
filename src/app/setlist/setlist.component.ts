@@ -14,8 +14,8 @@ export class SetlistComponent implements OnInit {
   music: Music;
 
   constructor(private af: AngularFire) {
-    this.showMusics = true;
-    this.showMusicForm = false;
+    this.showMusics = false;
+    this.showMusicForm = true;
     this.music = new Music();
     this.musics = this.af.database.list('/musics');
   }
@@ -24,13 +24,13 @@ export class SetlistComponent implements OnInit {
   }
 
   ShowMusicForm() {
-    this.showMusicForm = true;
-    this.showMusics = false;
+    this.showMusicForm = false;
+    this.showMusics = true;
   }
 
   ShowMusics() {
-    this.showMusics = true;
-    this.showMusicForm = false;
+    this.showMusics = false;
+    this.showMusicForm = true;
   }
 
   editMusic(music) {

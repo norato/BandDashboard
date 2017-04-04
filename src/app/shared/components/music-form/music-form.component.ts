@@ -1,14 +1,14 @@
 import { SearchMusicService } from '../../services/search-music.service';
 import { Music } from './music';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-music-form',
   templateUrl: './music-form.component.html',
   styleUrls: ['./music-form.component.scss']
 })
-export class MusicFormComponent implements OnInit {
+export class MusicFormComponent implements OnInit, OnChanges {
 
   musicForm: FormGroup;
   @Input() music;
@@ -18,6 +18,10 @@ export class MusicFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.initForm(this.music);
+  }
+
+  ngOnChanges() {
     this.initForm(this.music);
   }
 
@@ -37,6 +41,11 @@ export class MusicFormComponent implements OnInit {
         },
         error => console.log(error)
       );
+  }
+
+  cancel() {
+    this.music = new Music();
+    this.initForm(this.music);
   }
 
   initForm(_music) {

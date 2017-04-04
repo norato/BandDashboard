@@ -1,20 +1,22 @@
 <div class="container">
   <div class="row ustify-content-lg-center">
-    <div class="col-sm-12">
-      <button class="btn btn-primary" (click)="ShowMusicForm()">
-        {{ 'Setlist.AddMusic' | translate }}
-      </button>
-      <button class="btn btn-primary" (click)="ShowMusics()">
-        {{ 'Setlist.Musics' | translate }}
-      </button>
+    <div class="col-lg-12 hidden-lg-up">
+      <p class="text-center">
+        <button class="btn btn-primary" (click)="ShowMusicForm()">
+          {{ 'Setlist.AddMusic' | translate }}
+        </button>
+        <button class="btn btn-primary" (click)="ShowMusics()">
+          {{ 'Setlist.Musics' | translate }}
+        </button>
+      </p>
     </div>
-    <div *ngIf="showMusicForm" class="col-lg-5">
+    <div class="col-lg-6" [ngClass]="{'hidden-md-down': showMusicForm}">
       <app-music-form
         [music]="music"
         (createOrUpdateMusic)="createOrUpdateMusic($event)"
       ></app-music-form>
     </div>
-    <div *ngIf="showMusics" class="col-lg-5">
+    <div class="col-lg-6" [ngClass]="{'hidden-md-down': showMusics}">
       <app-music-list
         [musics]="musics"
         (musicEdit)="editMusic($event)"
