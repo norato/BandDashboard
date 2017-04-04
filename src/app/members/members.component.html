@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let member of members" >
+      <div class="card">
+        <img class="card-img-top avatar" src="{{member?.results[0].picture.medium}}" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">
+            {{ member?.results[0].name.title}} {{ member?.results[0].name.first}} {{ member?.results[0].name.last}}
+          </h4>
+          <p class="card-text">
+            Email: {{ member?.results[0].email}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
