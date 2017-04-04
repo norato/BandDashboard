@@ -12,7 +12,7 @@ export class MembersService {
 
   fetchMember(times): Observable<any> {
     const members = [];
-    for ( let i = 0; i <= times; i++) {
+    for ( let i = 0; i < times; i++) {
       this.http.get(`${this.baseUrl}`)
           .map(response => response.json())
           .subscribe(

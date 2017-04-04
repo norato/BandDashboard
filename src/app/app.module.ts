@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { Http } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -44,7 +45,8 @@ export const firebaseConfig = {
       }
     }),
     Angular2FontAwesomeModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

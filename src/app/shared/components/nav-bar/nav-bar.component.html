@@ -1,0 +1,18 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a routerLinkActive="active" class="nav-item nav-link" [routerLink]="['members']">
+        {{ 'Shared.NavBar.Members' | translate }}
+      </a>
+      <a routerLinkActive="active" class="nav-item nav-link" [routerLink]="['setlist']">
+        {{ 'Shared.NavBar.SetList' | translate }}
+      </a>
+      <a routerLinkActive="active" class="nav-item nav-link" [routerLink]="['charts']">
+        {{ 'Shared.NavBar.Charts' | translate }}
+      </a>
+    </div>
+  </div>
+</nav>

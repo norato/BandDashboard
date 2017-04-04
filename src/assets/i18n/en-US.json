@@ -12,7 +12,12 @@
       "Label": "Label",
       "Lyrics": "Lyrics"
     },
-    "HasNoMusic": "Has no music yet! <br/> Add your first music ;-)"
+    "HasNoMusic": "Has no music yet! <br/> Add your first music ;-)",
+    "NavBar": {
+      "Members": "Members",
+      "SetList": "SetList",
+      "Charts": "Charts"
+    }
   },
   "Setlist": {
     "AddMusic": "Add Music",
