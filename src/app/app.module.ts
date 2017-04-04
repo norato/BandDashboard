@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { Angular2FontAwesomeModule } from 'angular2-font-awesome/angular2-font-awesome';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -31,7 +32,8 @@ export function HttpLoaderFactory(http: Http) {
         deps: [Http]
 
       }
-    })
+    }),
+    Angular2FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

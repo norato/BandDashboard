@@ -1,0 +1,15 @@
+<div class="div-card">
+  <div class="infos">
+    <p class="label">{{ music.label }}</p>
+    <p class="name">{{ music.name }}</p>
+    <p class="artist">{{ music.artist }}</p>
+  </div>
+  <div class="actions">
+    <span class="pencil" (click)="editEmitter(music.id)">
+       <ng2-fa name="pencil"></ng2-fa>
+    </span>
+    <span class="trash" (click)="deleteEmitter(music.id)">
+       <ng2-fa name="trash"></ng2-fa>
+    </span>
+  </div>
+</div>

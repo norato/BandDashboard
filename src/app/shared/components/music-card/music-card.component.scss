@@ -1,0 +1,61 @@
+.div-card {
+  position: relative;
+  margin: 0.8em 0.5em;
+  background: #1abc9c;
+  box-shadow: 2px 2px 1px #95a5a6;
+  cursor: pointer;
+  &:hover {
+    background: #16a085;
+  }
+}
+
+.infos {
+  margin-left: 0.5em;
+  p {
+    margin: 0;
+  }
+}
+p.label {
+  font-size: 2.2em;
+  color: #ecf0f1;
+  font-weight: bold;
+}
+
+p.name {
+  font-size: 2em;
+  color: #ecf0f1;
+  font-weight: bold;
+}
+
+p.artist {
+  font-size: 1.6em;
+  color: #ecf0f1;
+  font-weight: bold;
+}
+
+.actions {
+  background: #16a085;
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  span {
+    margin: 0 0.7em;
+  }
+}
+
+ng2-fa {
+  font-size: 2em;
+}
+
+.pencil {
+  color: #00008b;
+}
+
+.trash {
+  color: #e74c3c;
+}

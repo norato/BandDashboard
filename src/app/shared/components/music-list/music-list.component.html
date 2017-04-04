@@ -1,10 +1,8 @@
 <div class="music-list">
   <div *ngIf="musics; else hasNoMusic" >
-    <ul>
-      <li *ngFor="let music of musics">
-        {{music | json}}
-      </li>
-    </ul>
+    <div class="scroll-div">
+      <app-music-card [music]="music" *ngFor="let music of musics"></app-music-card>
+    </div>
   </div>
   <ng-template #hasNoMusic>
     <p [innerHTML]="'Shared.HasNoMusic' | translate"></p>
