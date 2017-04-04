@@ -1,5 +1,4 @@
 export class Music {
-  id: string;
   artist: string;
   name: string;
   tone: string;
@@ -7,7 +6,6 @@ export class Music {
   label: string;
 
   constructor() {
-    this.id = '';
     this.artist = '';
     this.name = '';
     this.tone = '';
