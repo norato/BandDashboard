@@ -12,6 +12,8 @@ import { Angular2FontAwesomeModule } from 'angular2-font-awesome/angular2-font-a
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { AngularFireModule } from 'angularfire2';
+import { ChartsModule } from 'ng2-charts';
+
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http);
@@ -46,7 +48,8 @@ export const firebaseConfig = {
     }),
     Angular2FontAwesomeModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    SharedModule
+    SharedModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

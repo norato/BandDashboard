@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 const appRoutes: Routes = [
   { path: 'setlist', loadChildren: 'app/setlist/setlist.module#SetlistModule'},
   { path: 'members', loadChildren: 'app/members/members.module#MembersModule'},
+  { path: 'charts', loadChildren: 'app/charts/charts.module#BandChartsModule'},
   { path: '', redirectTo: 'members', pathMatch: 'full'}
 ];
 
