@@ -1,3 +1,4 @@
+import { SearchMusicService } from './services/search-music.service';
 import { Angular2FontAwesomeModule } from 'angular2-font-awesome/angular2-font-awesome';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,6 +25,9 @@ import { MusicCardComponent } from './components/music-card/music-card.component
   exports: [
     MusicFormComponent,
     MusicListComponent
+  ],
+  providers: [
+    SearchMusicService
   ]
 })
 export class SharedModule { }
