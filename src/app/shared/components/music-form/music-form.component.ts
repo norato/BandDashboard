@@ -10,13 +10,24 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class MusicFormComponent implements OnInit {
 
   musicForm: FormGroup;
-  @Input() music: Music;
+  @Input() music;
   @Output() createOrUpdateMusic: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   }
 
   ngOnInit() {
+    this.initForm();
+  }
+
+  submitForm(value) {
+    const music = Object.assign(this.music, value);
+    this.createOrUpdateMusic.emit(music);
+    this.music = new Music();
+    this.initForm();
+  }
+
+  initForm() {
     this.musicForm = new FormGroup({
       artist: new FormControl(this.music.artist, Validators.required),
       name: new FormControl(this.music.name, Validators.required),
@@ -24,10 +35,6 @@ export class MusicFormComponent implements OnInit {
       lyrics: new FormControl(this.music.lyrics, Validators.required),
       label: new FormControl(this.music.label, Validators.required),
     });
-  }
-
-  submitForm(value) {
-    this.createOrUpdateMusic.emit(value);
   }
 
 }

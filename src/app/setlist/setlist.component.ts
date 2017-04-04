@@ -39,7 +39,11 @@ export class SetlistComponent implements OnInit {
   }
 
   createOrUpdateMusic(music) {
-    this.musics.push(music);
+    if (music.$key) {
+      this.musics.update(music.$key, music);
+    } else {
+      this.musics.push(music);
+    }
   }
 
   deleteMusic(music) {
