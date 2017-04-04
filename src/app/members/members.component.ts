@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./members.component.scss']
 })
 export class MembersComponent implements OnInit {
-  members: Observable<Array<any>>;
+  members: any[];
   constructor(private _membersService: MembersService) {
   }
 
