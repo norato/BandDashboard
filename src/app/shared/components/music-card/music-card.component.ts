@@ -1,3 +1,4 @@
+import { FirebaseListObservable } from 'angularfire2';
 import {
   Component,
   OnInit,
@@ -13,23 +14,24 @@ import { Music } from './../music-form/music';
   styleUrls: ['./music-card.component.scss']
 })
 export class MusicCardComponent implements OnInit {
-  @Input() music: Music;
+  @Input() music;
   @Output() musicDelete: EventEmitter<any> = new EventEmitter<any>();
   @Output() musicEdit: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.music.$key);
   }
 
   editEmitter(music) {
     this.musicEdit.emit(music);
   }
 
-  deleteEmitter(id) {
-    const confirmation = confirm(`Do you really want to delete story #${id}?`);
+  deleteEmitter(music) {
+    const confirmation = confirm(`Do you really want to delete ${music.label}?`);
     if (confirmation === true) {
-      this.musicDelete.emit(id);
+      this.musicDelete.emit(music);
     };
   }
 

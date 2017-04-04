@@ -42,4 +42,8 @@ export class SetlistComponent implements OnInit {
     this.musics.push(music);
   }
 
+  deleteMusic(music) {
+    this.musics.remove(music.$key);
+  }
+
 }

@@ -5,6 +5,7 @@
         *ngFor="let music of musics | async"
         [music]="music"
         (musicEdit)="musicEdit.emit($event)"
+        (musicDelete)="musicDelete.emit($event)"
       ></app-music-card>
     </div>
   </div>
