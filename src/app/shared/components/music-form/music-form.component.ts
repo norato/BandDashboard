@@ -1,6 +1,6 @@
 import { Music } from './music';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-music-form',
@@ -11,6 +11,7 @@ export class MusicFormComponent implements OnInit {
 
   musicForm: FormGroup;
   @Input() music: Music;
+  @Output() createOrUpdateMusic: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   }
@@ -23,6 +24,10 @@ export class MusicFormComponent implements OnInit {
       lyrics: new FormControl(this.music.lyrics, Validators.required),
       label: new FormControl(this.music.label, Validators.required),
     });
+  }
+
+  submitForm(value) {
+    this.createOrUpdateMusic.emit(value);
   }
 
 }

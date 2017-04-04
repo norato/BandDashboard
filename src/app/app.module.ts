@@ -10,10 +10,20 @@ import { Angular2FontAwesomeModule } from 'angular2-font-awesome/angular2-font-a
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
+import { AngularFireModule } from 'angularfire2';
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http);
 }
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyAwis4GoiF7MCKBIVe-GHIv37ReUAsHOTE',
+  authDomain: 'band-dashboard.firebaseapp.com',
+  databaseURL: 'https://band-dashboard.firebaseio.com',
+  projectId: 'band-dashboard',
+  storageBucket: 'band-dashboard.appspot.com',
+  messagingSenderId: '644190313174'
+};
 
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
@@ -33,7 +43,8 @@ export function HttpLoaderFactory(http: Http) {
 
       }
     }),
-    Angular2FontAwesomeModule
+    Angular2FontAwesomeModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

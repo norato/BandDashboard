@@ -9,7 +9,10 @@
       </button>
     </div>
     <div *ngIf="showMusicForm" class="col-lg-5">
-      <app-music-form [music]="music"></app-music-form>
+      <app-music-form
+        [music]="music"
+        (createOrUpdateMusic)="createOrUpdateMusic($event)"
+      ></app-music-form>
     </div>
     <div *ngIf="showMusics" class="col-lg-5">
       <app-music-list

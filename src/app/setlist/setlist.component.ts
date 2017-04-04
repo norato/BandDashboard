@@ -1,5 +1,6 @@
-import { Music } from './../shared/components/music-form/music';
 import { Component, OnInit } from '@angular/core';
+import { Music } from './../shared/components/music-form/music';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-setlist',
@@ -9,30 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class SetlistComponent implements OnInit {
   showMusicForm: boolean;
   showMusics: boolean;
-  musics: Music[] = [
-    {
-      id: '1',
-      name: 'foo',
-      artist: 'bar',
-      tone: 'F',
-      label: 'FOO',
-      lyrics: 'Loren Ipson'
-    },
-    {
-      id: '2',
-      name: 'foo',
-      artist: 'bar',
-      tone: 'F',
-      label: 'FOO',
-      lyrics: 'Loren Ipson'
-    }
-  ];
+  musics: FirebaseListObservable<Music[]>;
   music: Music;
 
-  constructor() {
+  constructor(private af: AngularFire) {
     this.showMusics = true;
     this.showMusicForm = false;
     this.music = new Music();
+    this.musics = this.af.database.list('/musics');
   }
 
   ngOnInit() {
@@ -51,6 +36,10 @@ export class SetlistComponent implements OnInit {
   editMusic(music) {
     this.music = music;
     this.ShowMusicForm();
+  }
+
+  createOrUpdateMusic(music) {
+    this.musics.push(music);
   }
 
 }

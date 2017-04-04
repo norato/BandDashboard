@@ -1,5 +1,5 @@
 <div class="music-form">
-  <form [formGroup]="musicForm">
+  <form [formGroup]="musicForm" (ngSubmit)="submitForm(musicForm.value)">
     <div class="form-group">
       <input
           type="text"
